@@ -1,13 +1,15 @@
 # 🎨 AI Logo Generator – v2 Enhanced
 
-An AI-powered multi-step logo generation web application built using Streamlit, featuring structured prompt design, dynamic UI, and user feedback collection.
+An AI-powered multi-step logo generation web application built using Streamlit.
 
 ---
 
-## 🚀 Live Application
+## 🚀 Live Demo
 
-👉 **Try the App Here:**  
-https://ai-logo-generator-bkngwrsa7k2k6ycaucndki.streamlit.app/
+⚠️ Note: Since the app is deployed on Streamlit Cloud (free tier), it may take 5–15 seconds to wake up if inactive.
+
+🔗 Try the App:
+https://czaffpywz3i3zrsmjvklo3.streamlit.app/
 
 ---
 
@@ -15,70 +17,50 @@ https://ai-logo-generator-bkngwrsa7k2k6ycaucndki.streamlit.app/
 
 This application allows users to:
 
-- Select business category
+- Select business type
 - Enter company details
-- Define brand style preferences
-- Generate multiple AI-based logo variations
-- Download generated logos
-- Rate and provide feedback on logos
+- Define brand preferences
+- Generate AI-powered logo variations
+- Rate selected logos
+- Provide structured feedback
+- Download logos instantly
 
-The system is designed with modular architecture for easy future ML and API integration.
+The system is designed with modular architecture for future AI model and API integration.
 
 ---
 
 ## 🏗️ Architecture
 
-├── app.py
-├── requirements.txt
-├── assets/
-│ ├── hero_bg.png
-│ ├── bg_page2.png
-│ ├── bg_page3.png
-│ ├── bg_page4.png
-│ └── bg_page5.png
-├── utils/
-│ ├── prompt_builder.py
-│ └── api_client.py
-├── data/
-│ └── feedback.json
-└── README.md
-
+- `app.py` → Main Streamlit UI (multi-step flow)
+- `utils/prompt_builder.py` → Structured AI prompt generation
+- `utils/api_client.py` → Logo generation handler (API-ready architecture)
+- `assets/` → Background images and UI assets
+- `data/feedback.json` → User rating & feedback logging
 
 ---
 
 ## 🎯 Key Features (v2)
 
-- Multi-step guided UI flow
-- Dynamic background per page
-- Clean professional homepage redesign
-- Structured AI prompt builder
-- Multiple logo generation output
+- Multi-step guided user flow
+- Clean UI with custom backgrounds
+- Modular prompt construction
+- Multiple logo generation
+- Rating & feedback system
+- Persistent feedback storage
 - Download functionality
-- Logo rating system
-- Feedback storage (JSON-based)
 - Deployment-ready structure
-
----
-
-## 🧠 Technical Highlights
-
-- Streamlit session state management
-- Modular API-ready backend structure
-- Custom CSS styling
-- JSON-based feedback logging
-- Clean navigation flow
-- Production-ready Git structure
+- Git-based version control
 
 ---
 
 ## 🔮 Future Scope
 
-- Integration with real image generation APIs (Stable Diffusion / DALL·E etc.)
-- ML-based feedback analysis & logo recommendation engine
-- User authentication system
-- Database-backed storage
-- Analytics dashboard
-- SaaS deployment model
+- Integration of real AI image generation APIs
+- ML-based feedback analysis
+- Logo recommendation engine
+- User session persistence
+- Database integration
+- Advanced customization options
 
 ---
 
@@ -86,27 +68,18 @@ The system is designed with modular architecture for easy future ML and API inte
 
 - Python
 - Streamlit
-- Custom CSS
-- JSON data storage
+- Modular utility architecture
 - Git & GitHub
-- Streamlit Cloud
+- Streamlit Cloud deployment
 
 ---
 
-## 📌 Current Status
+## 📌 Status
 
-✅ Fully deployed (v2 Enhanced)  
-✅ UI optimized  
-✅ Feedback system implemented  
-🚧 Future ML and production API integrations planned  
+v2 Enhanced deployed successfully.
+Stable UI and feedback workflow implemented.
 
 ---
+_Last updated: v2 Final Deployment_
 
-## 👨‍💻 Author
 
-Adarsh K K  
-AI Intern | Machine Learning & AI Enthusiast  
-
----
-
-If you find this project useful, feel free to ⭐ the repository.
