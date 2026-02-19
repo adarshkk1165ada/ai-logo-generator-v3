@@ -1,85 +1,188 @@
-# 🎨 AI Logo Generator – v2 Enhanced
+# 🎨 ai-logo-generator-v3
 
-An AI-powered multi-step logo generation web application built using Streamlit.
+An AI-powered multi-step logo generation web application built using Streamlit and Stability AI REST API.
+
+This version integrates real AI-based image generation using Stability AI's official API (SDXL model).
 
 ---
 
 ## 🚀 Live Demo
 
-⚠️ Note: Since the app is deployed on Streamlit Cloud (free tier), it may take 5–15 seconds to wake up if inactive.
-
-🔗 Try the App:
-https://czaffpywz3i3zrsmjvklo3.streamlit.app/
+> (Deployment link will be added after Streamlit Cloud deployment)
 
 ---
 
-## 🔹 Project Overview
+## 🧠 Project Overview
 
 This application allows users to:
 
 - Select business type
 - Enter company details
 - Define brand preferences
-- Generate AI-powered logo variations
-- Rate selected logos
-- Provide structured feedback
-- Download logos instantly
+- Generate AI-based logos
+- Download generated logos
+- Rate and submit feedback
 
-The system is designed with modular architecture for future AI model and API integration.
-
----
-
-## 🏗️ Architecture
-
-- `app.py` → Main Streamlit UI (multi-step flow)
-- `utils/prompt_builder.py` → Structured AI prompt generation
-- `utils/api_client.py` → Logo generation handler (API-ready architecture)
-- `assets/` → Background images and UI assets
-- `data/feedback.json` → User rating & feedback logging
+The app uses Stability AI’s image generation API to create high-resolution logo designs based on structured prompts.
 
 ---
 
-## 🎯 Key Features (v2)
+## 🏗 Architecture Overview
 
-- Multi-step guided user flow
-- Clean UI with custom backgrounds
-- Modular prompt construction
-- Multiple logo generation
-- Rating & feedback system
-- Persistent feedback storage
-- Download functionality
-- Deployment-ready structure
-- Git-based version control
-
----
-
-## 🔮 Future Scope
-
-- Integration of real AI image generation APIs
-- ML-based feedback analysis
-- Logo recommendation engine
-- User session persistence
-- Database integration
-- Advanced customization options
+User Input (Streamlit UI)
+        ↓
+Prompt Builder (Structured Prompt Construction)
+        ↓
+Stability AI REST API (SDXL Model)
+        ↓
+Image Processing (Pillow)
+        ↓
+Display + Download
+        ↓
+Feedback Stored in JSON
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-- Python
+- Python 3.11+
 - Streamlit
-- Modular utility architecture
-- Git & GitHub
-- Streamlit Cloud deployment
+- Stability AI REST API
+- Requests (HTTP communication)
+- Pillow (Image handling)
+- JSON (Feedback storage)
 
 ---
 
-## 📌 Status
+## 📂 Project Structure
 
-v2 Enhanced deployed successfully.
-Stable UI and feedback workflow implemented.
+```
+ai-logo-generator-v3/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── assets/
+│
+├── utils/
+│   ├── api_client.py
+│   └── prompt_builder.py
+│
+└── data/   (ignored in production)
+```
 
 ---
-_Last updated: v2 Final Deployment_
+
+## 🔐 API Integration
+
+This project uses Stability AI REST API (SDXL model).
+
+Authentication is handled securely using Streamlit Secrets:
+
+`.streamlit/secrets.toml` (local only, not pushed to GitHub)
+
+Example:
+
+```
+STABILITY_API_KEY = "your_api_key_here"
+```
+
+In production (Streamlit Cloud), the same key must be added under:
+
+App Settings → Secrets
+
+---
+
+## ⚙ How to Run Locally
+
+1. Clone the repository
+2. Create virtual environment
+3. Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+4. Add your Stability API key in:
+
+```
+.streamlit/secrets.toml
+```
+
+5. Run:
+
+```
+streamlit run app.py
+```
+
+---
+
+## 🧾 Feedback System
+
+User ratings and feedback are stored locally in:
+
+```
+data/feedback.json
+```
+
+This folder is ignored in Git to prevent pushing runtime data.
+
+For production-scale systems, this should be replaced with a proper database (PostgreSQL, MongoDB, etc.).
+
+---
+
+## 📦 Deployment
+
+The application is deployed using Streamlit Cloud.
+
+Deployment Steps:
+
+- Push code to GitHub
+- Connect repository to Streamlit Cloud
+- Add Stability API key in Secrets section
+- Deploy
+
+---
+
+## ⚠ Security Notes
+
+- API keys are never stored in the code.
+- `.streamlit/secrets.toml` is excluded via `.gitignore`.
+- Sensitive credentials are handled via environment-based configuration.
+
+---
+
+## 📌 Future Improvements
+
+- Replace JSON feedback storage with database
+- Add usage tracking
+- Add rate limiting
+- Add authentication system
+- Improve error handling
+- Add async request handling
+
+---
+
+## 👨‍💻 Author
+
+Adarsh K K  
+AI Intern – AI Logo Generation System  
+Built as part of production-ready AI integration learning.
+
+---
+
+## 🧠 Engineering Focus of This Version
+
+- Clean API abstraction
+- Modular prompt builder
+- Separation of concerns
+- Production-safe secrets management
+- Deployment-ready structure
+
+---
+
+> "Systems become powerful when structure replaces chaos."
 
 
