@@ -1,3 +1,19 @@
 ﻿venv/
 __pycache__/
 *.pyc
+# macOS junk
+.DS_Store
+
+# Jupyter hidden folders
+.ipynb_checkpoints/
+
+# VS Code settings (optional)
+.vscode/
+
+# Env and logs
+.env
+*.log
+
+# Streamlit config (optional, if not needed)
+.streamlit/secrets.toml
+data/

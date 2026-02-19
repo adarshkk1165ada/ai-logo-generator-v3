@@ -5,6 +5,7 @@ import base64
 import json
 import os
 from datetime import datetime
+from io import BytesIO
 
 st.set_page_config(
     page_title="AI Logo Generator",
@@ -296,7 +297,7 @@ elif current_page == 5:
 
         with st.spinner("Generating logos..."):
             st.session_state.generated_images = [
-                generate_logo(prompt) for _ in range(4)
+                generate_logo(prompt) for _ in range(1)
             ]
 
     if st.session_state.generated_images:
@@ -304,8 +305,10 @@ elif current_page == 5:
 
         for i, img in enumerate(st.session_state.generated_images):
             with cols[i % 2]:
-                st.image(img, width=350)
-
+                if img is not None:
+                    st.image(img, width=350)
+                else:
+                    st.error("Image generation failed.")
                 if st.button(f"Rate Logo {i+1} / Provide Feedback", key=f"rate_{i}"):
                     st.session_state.selected_logo = i
                     st.session_state[f"show_hint_{i}"] = True
@@ -327,13 +330,19 @@ elif current_page == 5:
                     </div>
                     """, unsafe_allow_html=True)
 
-                st.download_button(
-                    label=f"Download Logo {i+1}",
-                    data=img,
-                    file_name=f"logo_{i+1}.png",
-                    mime="image/png",
-                    key=f"download_{i}"
-                )
+                if img is not None:
+                    buffer = BytesIO()
+                    img.save(buffer, format="PNG")
+                    buffer.seek(0)
+                    st.download_button(
+                        label=f"Download Logo {i+1}",
+                        data=buffer,
+                        file_name=f"logo_{i+1}.png",
+                        mime="image/png",
+                        key=f"download_{i}"
+                    )
+                    
+                
 
     # ✅ Feedback Section: Only if a logo was selected
     if st.session_state.selected_logo is not None:
