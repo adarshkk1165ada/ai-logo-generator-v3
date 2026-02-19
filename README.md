@@ -8,9 +8,11 @@ This version integrates real AI-based image generation using Stability AI's offi
 
 ## 🚀 Live Demo
 
-> (Deployment link will be added after Streamlit Cloud deployment)
+Try the app here:
 
----
+https://ai-logo-generator-v3-nu22cbjyc6gafiyfjhdofu.streamlit.app/
+
+---##
 
 ## 🧠 Project Overview
 
